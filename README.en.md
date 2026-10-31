@@ -66,4 +66,4 @@ PRs welcome — see [CONTRIBUTING](CONTRIBUTING.md) for the note template.
 
 ## License
 
-[MIT](LICENSE) © 2026 Song Jincheng (Zephyr-Song)
+[MIT](LICENSE) © 2026 Zephyr-Song

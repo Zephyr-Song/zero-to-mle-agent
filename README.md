@@ -86,4 +86,4 @@ A curated learning path & in-depth paper notes for **Agent for MLE**
 
 ## License
 
-[MIT](LICENSE) © 2026 宋锦程 (Zephyr-Song)
+[MIT](LICENSE) © 2026 Zephyr-Song
