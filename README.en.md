@@ -8,7 +8,7 @@ A build-your-own series: one runnable Python file per lesson, zero dependencies
 to start, no API key needed (built-in mock LLM).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Lessons](https://img.shields.io/badge/lessons-2%2F7-blue)](#-lessons)
+[![Lessons](https://img.shields.io/badge/lessons-3%2F7-blue)](#-lessons)
 [![Deps](https://img.shields.io/badge/starting%20deps-zero-success)]()
 [![中文](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%20README-here-orange)](README.md)
 
@@ -34,7 +34,7 @@ Instead of reading ten papers first, **build one yourself**. 7 lessons, each:
 |---|---|---|---|
 | **L01** | ReAct loop — a reasoning loop in ~60 lines | ✅ | `python lessons/l01_react_loop.py` |
 | **L02** | A real environment — the agent writes ML code, runs sandboxed, gets a **real accuracy** | ✅ | `pip install scikit-learn` → `python lessons/l02_real_env.py` |
-| **L03** | Solution tree & operators — Draft / Debug / Improve | 📝 | — |
+| **L03** | Solution tree & operators — same budget, greedy 0.953 vs backtracking 0.988 (real experiment) | ✅ | `python lessons/l03_solution_tree.py` |
 | **L04** | Summarization — why AIDE beats linear ReAct | 📝 | — |
 | **L05** | Search policy — greedy vs tree search (verify AIRA yourself) | 📝 | — |
 | **L06** | HITL gate — add a human-oversight layer | 📝 | — |
