@@ -8,7 +8,7 @@
 从 60 行的 ReAct 循环开始，一步步造出一个能自己做机器学习的 Agent。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Lessons](https://img.shields.io/badge/lessons-1%2F7-blue)](#-课程表)
+[![Lessons](https://img.shields.io/badge/lessons-2%2F7-blue)](#-课程表)
 [![Deps](https://img.shields.io/badge/起步依赖-零-success)]()
 [![语言](https://img.shields.io/badge/语言-中文%20%7C%20English-orange)](README.en.md)
 
@@ -33,7 +33,7 @@
 | 课 | 内容 | 状态 | 运行 |
 |---|---|---|---|
 | **L01** | ReAct 循环——60 行写出一个会推理的循环（Think→Act→Observe） | ✅ | `python lessons/l01_react_loop.py` |
-| **L02** | 真实环境——agent 自己写 ML 代码，环境真实评分，拿到第一个准确率 | 🚧 | — |
+| **L02** | 真实环境——agent 自己写 ML 代码，环境子进程隔离执行，拿到**真实准确率**（实测：线性基线 0.947 反而赢过 GBDT） | ✅ | `pip install scikit-learn` → `python lessons/l02_real_env.py` |
 | **L03** | 方案树与三算子——Draft / Debug / Improve | 📝 | — |
 | **L04** | Summarization——上下文不爆炸的关键（AIDE 碾压 ReAct 的原因） | 📝 | — |
 | **L05** | 搜索策略——greedy vs 树搜索，亲手验证 AIRA 的"算子才是瓶颈" | 📝 | — |
