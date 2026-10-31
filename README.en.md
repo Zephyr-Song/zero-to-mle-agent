@@ -2,11 +2,14 @@
 
 # 🧭 Zero to MLE Agent
 
-**A curated learning path & in-depth paper notes for Agent for MLE — from zero to research-ready.**
+**Build Your Own MLE Agent — from a 60-line ReAct loop to a full mini agent.**
+
+A build-your-own series: one runnable Python file per lesson, zero dependencies
+to start, no API key needed (built-in mock LLM).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Papers](https://img.shields.io/badge/papers%20covered-5-blue)](#-paper-notes)
-[![Status](https://img.shields.io/badge/status-actively%20updated-brightgreen)]()
+[![Lessons](https://img.shields.io/badge/lessons-1%2F7-blue)](#-lessons)
+[![Deps](https://img.shields.io/badge/starting%20deps-zero-success)]()
 [![中文](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%20README-here-orange)](README.md)
 
 </div>
@@ -15,54 +18,49 @@
 
 ## What is this
 
-**Agent for MLE** = using an LLM as an *autonomous machine learning engineer*: give it a dataset and a task, and it writes code, runs experiments, reads the metrics, and decides what to change next — looping until it hits the target (AIDE, MLE-Bench, MLGym, AIRA all live here).
+**Agent for MLE** = an LLM acting as an *autonomous machine learning engineer*: it writes code, runs experiments, reads the metrics, and decides what to change next (AIDE, MLE-Bench, MLGym all live here).
 
-This repo gives you two things:
+Instead of reading ten papers first, **build one yourself**. 7 lessons, each:
 
-1. **A guided reading path**: what order to read papers in, how deep to go on each, and what questions to hold while reading
-2. **Five in-depth notes**: each paper dissected with a uniform template (Problem → Method → Results → **Critical reading**) — not summaries, but notes that expose each paper's load-bearing assumptions and weak spots. That's ammunition for writing your own paper.
+- ✅ **One file** (`lessons/l0X_xxx.py`), runnable standalone: `python lessons/l01_react_loop.py`
+- ✅ **Zero dependencies to start**; built-in **MockLLM — no API key needed**
+- ✅ **Reproducible** (fixed seeds)
+- ✅ **Real debugging stories in the comments**
+- 🎯 **End state**: ~300 lines total — a minimal MLE agent with a solution tree, search policy, and a human-oversight gate
 
-## Reading path (6 steps)
+## 📚 Lessons
 
-| Step | Content | Paper | Notes |
+| # | Topic | Status | Run |
 |---|---|---|---|
-| 0 | Foundations: what an LLM agent is + the ML engineering loop | — | — |
-| 1 | The "exam hall" first | MLE-Bench (OpenAI) | [notes](docs/papers/mle-bench.md) |
-| 2 | The champion's playbook ⭐ read first | AIDE (Weco AI) | [notes](docs/papers/aide.md) |
-| 3 | The other route (training-based) | ML-Agent (SJTU) | [notes](docs/papers/ml-agent.md) |
-| 4 | Broaden with a survey | LLM Agent Survey | — |
-| 5 | Critical read: AIDE's mirror | AIRA (Meta) | [notes](docs/papers/aira.md) |
-| 6 | A *trainable* benchmark environment | MLGym (Meta) | [notes](docs/papers/mlgym.md) |
+| **L01** | ReAct loop — a reasoning loop in ~60 lines | ✅ | `python lessons/l01_react_loop.py` |
+| **L02** | A real environment — the agent writes ML code, gets a real accuracy | 🚧 | — |
+| **L03** | Solution tree & operators — Draft / Debug / Improve | 📝 | — |
+| **L04** | Summarization — why AIDE beats linear ReAct | 📝 | — |
+| **L05** | Search policy — greedy vs tree search (verify AIRA yourself) | 📝 | — |
+| **L06** | HITL gate — add a human-oversight layer | 📝 | — |
+| **L07** | Swap in a real LLM (OpenAI-compatible) | 📝 | — |
 
-Method: the [three-pass reading technique](docs/00-how-to-read-papers.md).
+Git history = course progress: one commit per lesson.
 
-## 📚 Paper notes
+## ⚡ Quick start
 
-| Paper | arXiv | One-line takeaway | Notes |
-|---|---|---|---|
-| **MLE-Bench** (OpenAI) | [2410.07095](https://arxiv.org/abs/2410.07095) | 75 real Kaggle comps as the exam; medal rate as headline metric | [📖](docs/papers/mle-bench.md) |
-| **AIDE** (Weco AI) | [2502.13138](https://arxiv.org/abs/2502.13138) | ML engineering as tree search over the space of code | [📖](docs/papers/aide.md) |
-| **ML-Agent** (SJTU) | [2505.23723](https://arxiv.org/abs/2505.23723) | 7B model + online RL, trained on 9 tasks, rivals GPT-5 | [📖](docs/papers/ml-agent.md) |
-| **AIRA** (Meta) | [2507.02554](https://arxiv.org/abs/2507.02554) | Search policy barely matters — **operators are the bottleneck**; 9–13% generalization gap | [📖](docs/papers/aira.md) |
-| **MLGym** (Meta) | [2502.14499](https://arxiv.org/abs/2502.14499) | First *trainable* ML Gym + a 6-level autonomy ladder (L0–L5) | [📖](docs/papers/mlgym.md) |
-
-## Two camps, one picture
-
+```bash
+git clone https://github.com/Zephyr-Song/zero-to-mle-agent.git
+cd zero-to-mle-agent
+python lessons/l01_react_loop.py
 ```
-                Agent for MLE
-               /             \
-   Camp A: training-free    Camp B: online RL
-   (strong LLM + search)    (train a small agent)
-   AIDE / MLE-Bench         ML-Agent
-   MLGym / AIRA
-               \             /
-      【Shared blind spot: autonomous but opaque, unauditable】
-      metric hacking / validation overfitting / no "why did it change this"
-```
+
+No GPU, no API key, nothing to install (Python 3.10+).
+
+## 📖 Reference: paper notes
+
+Theory companion, in-depth notes with a critical-reading section each:
+[MLE-Bench](references/papers/mle-bench.md) · [AIDE](references/papers/aide.md) · [ML-Agent](references/papers/ml-agent.md) · [AIRA](references/papers/aira.md) · [MLGym](references/papers/mlgym.md)
+Also: [three-pass reading method](references/00-how-to-read-papers.md) · [full reading roadmap](references/01-roadmap.md)
 
 ## Contributing
 
-PRs welcome — see [CONTRIBUTING](CONTRIBUTING.md) for the note template.
+Issues and PRs welcome — see [CONTRIBUTING](CONTRIBUTING.md).
 
 ## License
 
