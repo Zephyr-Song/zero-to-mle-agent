@@ -8,7 +8,7 @@
 从 60 行的 ReAct 循环开始，一步步造出一个能自己做机器学习的 Agent。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Lessons](https://img.shields.io/badge/lessons-5%2F7-blue)](#-课程表)
+[![Lessons](https://img.shields.io/badge/lessons-6%2F7-blue)](#-课程表)
 [![Deps](https://img.shields.io/badge/起步依赖-零-success)]()
 [![语言](https://img.shields.io/badge/语言-中文%20%7C%20English-orange)](README.en.md)
 
@@ -37,7 +37,7 @@
 | **L03** | 方案树与三算子——同预算同算子，greedy 0.953 vs 会回头 0.988（真实实验，含一个量纲陷阱特征） | ✅ | `python lessons/l03_solution_tree.py` |
 | **L04** | Summarization——决策完全相同，成本 7× 之差（实测累计发送量，外推 200 轮 19×） | ✅ | `python lessons/l04_summarization.py` |
 | **L05** | 搜索策略——2×4 受控矩阵，亲手验证 AIRA 的"算子才是瓶颈"（实测：算子效应 +0.0351，三种回头策略差异 0.0000） | ✅ | `python lessons/l05_search_policy.py` |
-| **L06** | HITL 闸门——给 agent 加人类审计层（本系列的原创创新点） | 📝 | — |
+| **L06** | HITL 闸门——卡在 MLGym 的 L1→L2 之间，用 held-out 测试集审计（实测：weak 场景拦下验证冠军 RF100、改 ship 测试冠军 GBDT；strong 场景校准放行） | ✅ | `python lessons/l06_hitl_gate.py` |
 | **L07** | 接真 LLM——把 MockLLM 换成 OpenAI 兼容接口，跑真实小基准 | 📝 | — |
 
 > git 提交历史即课程进度：每一课一个 commit，`git log` 就是从零到一的全过程。
